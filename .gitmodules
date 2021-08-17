@@ -1,0 +1,9 @@
+[submodule "lib/hal-arduino-esp32"]
+	path = lib/hal-arduino-esp32
+	url = https://github.com/stif/tf-hal-arduino-esp32.git
+[submodule "lib/binding"]
+	path = lib/binding
+	url = https://github.com/stif/tf-mcu-binding.git
+[submodule "lib/bindings"]
+	path = lib/bindings
+	url = https://github.com/stif/tf-mcu-bindings.git
