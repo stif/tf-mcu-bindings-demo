@@ -40,6 +40,7 @@ How to use the Thinkerforge C/C++ Bindings for MCU with PlatformIO:
 |CS C    |GPIO 4  |PIN 18     |
 |CS D    |GPIO 5  |PIN 15     |
 
+![OlimexESP32-Tinkerforge](/home/stif/workspace/arduino/TinkerForgeESP32/OlimexESP32-Tinkerforge.jpg)
 
 ### Official Documentation
 
