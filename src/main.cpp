@@ -18,6 +18,22 @@ void check(int e_code, const char *c) {
 
 TF_HalContext hal;
 
+void getDeviceInfo() {
+  String result = "{\"devices\": [";
+  size_t i = 0;
+  char uid[7] = {0};
+  char pos = 0;
+  uint16_t did = 0;
+  while(tf_hal_get_device_info(&hal, i, uid, &pos, &did) == TF_E_OK) {
+      char buf[100] = {0};
+      snprintf(buf, sizeof(buf), "%c{\"UID\":\"%s\", \"DID\":%u, \"port\":\"%c\"}", i == 0 ? ' ': ',', uid, did, pos);
+      result += buf;
+      ++i;
+  }
+  result += "]}";
+  tf_hal_printf("Get Device Info:\n %s", result);
+}
+
 // Forward declare the brick/bricklets setup and loop functions.
 // TODO: Why i cannot forward declare these functions in tf_hat_zero.h / tf_thermocouple.h ?
 extern "C" void hat_zero_setup(TF_HalContext *hal);
@@ -31,14 +47,15 @@ void setup() {
   delay(3000);
   Serial.println("Hello World!");
   check(tf_hal_create(&hal, ports, sizeof(ports)/sizeof(ports[0])), "hal create");
-  hat_zero_setup(&hal);
-  thermocouple_setup(&hal);
+  getDeviceInfo();
+  //hat_zero_setup(&hal);
+  //thermocouple_setup(&hal);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   // Poll for callbacks
-	tf_hal_callback_tick(&hal, 0);
+	//tf_hal_callback_tick(&hal, 0);
   /*
   hat_zero_loop(&hal);
   thermocouple_loop(&hal);
