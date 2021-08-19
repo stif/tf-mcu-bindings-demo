@@ -8,7 +8,7 @@
 // you have to connect and list all chip select
 // signals, to make sure the signals are separated
 // correctly.
-TF_Port ports[5] = {{
+TF_Port ports[3] = {{
     .chip_select_pin=32,
     .spi=HSPI,
     .port_name='A'
@@ -16,14 +16,6 @@ TF_Port ports[5] = {{
     .chip_select_pin=33,
     .spi=HSPI,
     .port_name='B'
-}, {
-    .chip_select_pin=4,
-    .spi=HSPI,
-    .port_name='C'
-}, {
-    .chip_select_pin=5,
-    .spi=HSPI,
-    .port_name='D'
 }, {
     .chip_select_pin=15,
     .spi=HSPI,
