@@ -8,7 +8,15 @@ uploading to the microcontroller.
 
 ### PlatformIO
 
-How to use the Thinkerforge C/C++ Bindings for MCU with PlatformIO:
+#### Using this Repository
+
+```
+git clone https://github.com/stif/tf-mcu-bindings-demo.git
+cd tf-mcu-bindings-demo/
+git submodule init
+git submodule update
+```
+#### Create your own Repository
 
  * Create a Initial PlatformIO Project via PIO Home
     * Enter a Project Name
@@ -32,7 +40,7 @@ How to use the Thinkerforge C/C++ Bindings for MCU with PlatformIO:
 |Mapping |ESP32   |HAT Zero   |
 |--------|--------|-----------|
 |MOSI    |GPIO 13 |PIN 19     |
-|MISO    |GPIO 16 |PIN 21     |
+|MISO    |GPIO 16 (12) |PIN 21     |
 |CLK     |GPIO 14 |PIN 23     |
 |CS HAT  |GPIO 15 |PIN 22     |
 |CS A    |GPIO 32 |PIN 13     |
