@@ -4,6 +4,7 @@
 #include "errors.h"
 #include "ports.h"
 
+#include "bricklet_unknown.h"
 //#include "tf_hat_zero.h"
 //#include "tf_thermocouple.h"
 
@@ -34,6 +35,17 @@ void getDeviceInfo() {
   tf_hal_printf("Get Device Info:\n %s\n", result.c_str());
 }
 
+void createTraffic() {
+  TF_Unknown unknown;
+
+  for(int i = 0; i < sizeof(ports)/sizeof(ports[0]); ++i) {
+    tf_unknown_create(&unknown, "1", &hal, (uint8_t)i, 0);
+
+    int rc = tf_unknown_get_identity(&unknown, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
+    tf_hal_printf("RC %d: %d\n",i,rc);
+    tf_unknown_destroy(&unknown);
+  }
+}
 // Forward declare the brick/bricklets setup and loop functions.
 // TODO: Why i cannot forward declare these functions in tf_hat_zero.h / tf_thermocouple.h ?
 /*
@@ -57,8 +69,12 @@ void loop() {
   // put your main code here, to run repeatedly:
   getDeviceInfo();
   delay(3000);
+  createTraffic();
+  delay(3000);
   // Poll for callbacks
-	//tf_hal_callback_tick(&hal, 0);
+	tf_hal_callback_tick(&hal, 0);
+  delay(3000);
+  
   /*
   hat_zero_loop(&hal);
   thermocouple_loop(&hal);
