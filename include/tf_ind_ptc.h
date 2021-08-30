@@ -1,12 +1,12 @@
-#ifndef __TF_PTC_V2_H__
-#define __TF_PTC_V2_H__
+#ifndef __TF_IND_PTC_H__
+#define __TF_IND_PTC_H__
 
 // This example is not self-contained.
 // It requres usage of the example driver specific to your platform.
 // See the HAL documentation.
 
 #include "hal_common.h"
-#include "bricklet_ptc_v2.h"
+#include "bricklet_industrial_ptc.h"
 
 #define UID "TMC" // Change XYZ to the UID of your PTC Bricklet 2.0
 
@@ -16,6 +16,6 @@ void ptc_setup(TF_HalContext *hal);
 void ptc_loop(TF_HalContext *hal);
 */
 
-static void ptc_temperature_handler(TF_PTCV2 *device, int32_t temperature, void *user_data);
+static void ptc_temperature_handler(TF_IndustrialPTC *device, int32_t temperature, void *user_data);
 
-#endif // __TF_PTC_V2_H__
+#endif // __TF_IND_PTC_H__

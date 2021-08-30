@@ -5,9 +5,9 @@
 //#include "tf_utils.h"
 #include "errors.h"
 
-#include "tf_hat_zero.h"
 #include "tf_thermocouple.h"
-#include "tf_ptc_v2.h"
+#include "tf_hat_zero.h"
+#include "tf_ind_ptc.h"
 #include "tf_ind_analog_in_v2.h"
 #include "tf_ind_analog_out_v2.h"
 
@@ -20,7 +20,15 @@ void check(int e_code, const char *c) {
 
   tf_hal_printf("Failed to %s: %s (error code %d)\n", c, tf_hal_strerror(e_code), e_code);
 }
+/*
+// Callback function for temperature callback
+void temperature_handler(TF_ThermocoupleV2 *device, int32_t temperature,
+                                void *user_data) {
+	(void)device; (void)user_data; // avoid unused parameter warning
 
+	tf_hal_printf("Temperature: %d 1/%d °C\n", temperature, 100.0);
+}
+*/
 // Forward declare the brick/bricklets setup and loop functions.
 // TODO: Why i cannot forward declare these functions in tf_hat_zero.h / tf_thermocouple.h ?
 
