@@ -22,9 +22,8 @@ void thermocouple_setup(TF_HalContext *hal) {
 	// Set period for temperature callback to 1s (1000ms) without a threshold
 	tf_thermocouple_v2_set_temperature_callback_configuration(&t, 1000, false, 'x', 0, 0);
 }
-/*
+
 void thermocouple_loop(TF_HalContext *hal) {
 	// Poll for callbacks
 	tf_hal_callback_tick(hal, 0);
 }
-*/

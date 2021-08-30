@@ -20,9 +20,8 @@ void hat_zero_setup(TF_HalContext *hal) {
 
 	tf_hal_printf("Voltage: %d 1/%d V\n", voltage, 1000.0);
 }
-/*
+
 void hat_zero_loop(TF_HalContext *hal) {
 	// Poll for callbacks
 	tf_hal_callback_tick(hal, 0);
 }
-*/
