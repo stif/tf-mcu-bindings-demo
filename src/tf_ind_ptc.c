@@ -12,7 +12,7 @@ static TF_IndustrialPTC ptc;
 
 void ptc_setup(TF_HalContext *hal) {
 	// Create device object
-	check(tf_industrial_ptc_create(&ptc, UID, hal), "create device object");
+	check(tf_industrial_ptc_create(&ptc, UID_PTC, hal), "create device object");
 	
 	// Register temperature callback to function temperature_handler
 	tf_industrial_ptc_register_temperature_callback(&ptc,

@@ -12,7 +12,7 @@ static TF_ThermocoupleV2 t;
 
 void thermocouple_setup(TF_HalContext *hal) {
 	// Create device object
-	check(tf_thermocouple_v2_create(&t, UID, hal), "create device object");
+	check(tf_thermocouple_v2_create(&t, UID_THERMOCOUPLE, hal), "create device object");
 
 	// Register temperature callback to function temperature_handler
 	tf_thermocouple_v2_register_temperature_callback(&t,

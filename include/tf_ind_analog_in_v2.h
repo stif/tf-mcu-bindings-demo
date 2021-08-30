@@ -8,7 +8,7 @@
 #include "hal_common.h"
 #include "bricklet_industrial_dual_analog_in_v2.h"
 
-#define UID "Sfw" // Change XYZ to the UID of your Industrial Dual Analog In Bricklet 2.0
+#define UID_ANALOG_IN "Sfw" // Change XYZ to the UID of your Industrial Dual Analog In Bricklet 2.0
 
 extern void check(int rc, const char* msg);
 /*

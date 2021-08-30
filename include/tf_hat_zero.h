@@ -5,7 +5,7 @@
 #include "brick_hat_zero.h"
 #include "errors.h"
 
-#define UID "V7o" // Change XXYYZZ to the UID of your HAT Zero Brick
+#define UID_ZERO "V7o" // Change XXYYZZ to the UID of your HAT Zero Brick
 
 extern void check(int rc, const char* msg);
 

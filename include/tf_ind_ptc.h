@@ -8,7 +8,7 @@
 #include "hal_common.h"
 #include "bricklet_industrial_ptc.h"
 
-#define UID "TMC" // Change XYZ to the UID of your PTC Bricklet 2.0
+#define UID_PTC "TMC" // Change XYZ to the UID of your PTC Bricklet 2.0
 
 extern void check(int rc, const char* msg);
 /*

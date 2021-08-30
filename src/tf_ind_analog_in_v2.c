@@ -14,7 +14,7 @@ static TF_IndustrialDualAnalogInV2 idai;
 
 void analog_in_setup(TF_HalContext *hal) {
 	// Create device object
-	check(tf_industrial_dual_analog_in_v2_create(&idai, UID, hal), "create device object");
+	check(tf_industrial_dual_analog_in_v2_create(&idai, UID_ANALOG_IN, hal), "create device object");
 
 	// Register voltage callback to function voltage_handler
 	tf_industrial_dual_analog_in_v2_register_voltage_callback(&idai,

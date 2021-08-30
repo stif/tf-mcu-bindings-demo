@@ -8,7 +8,7 @@
 #include "hal_common.h"
 #include "bricklet_thermocouple_v2.h"
 
-#define UID "RJH" // Change XYZ to the UID of your Thermocouple Bricklet 2.0
+#define UID_THERMOCOUPLE "RJH" // Change XYZ to the UID of your Thermocouple Bricklet 2.0
 
 extern void check(int rc, const char* msg);
 

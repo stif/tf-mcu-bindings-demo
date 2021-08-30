@@ -17,7 +17,7 @@ void check(int e_code, const char *c) {
 
 void hat_zero_setup(TF_HalContext *hal) {
 	// Create device object
-	check(tf_hat_zero_create(&hz, UID, hal), "create device object");
+	check(tf_hat_zero_create(&hz, UID_ZERO, hal), "create device object");
 
 	// Get current voltage
 	uint16_t voltage;
