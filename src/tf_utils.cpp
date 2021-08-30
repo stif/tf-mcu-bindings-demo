@@ -1,15 +1,14 @@
 #include "tf_utils.h"
 
-//extern TF_HalContext hal;
+extern TF_HalContext hal;
+extern TF_Port ports[5];
 
 void check(int e_code, const char *c) {
-  if (e_code == TF_E_OK) {
-      return;
+  if (e_code != TF_E_OK) {
+      tf_hal_printf("Failed to %s: %s (error code %d)\n", c, tf_hal_strerror(e_code), e_code);
   }
-
-  tf_hal_printf("Failed to %s: %s (error code %d)\n", c, tf_hal_strerror(e_code), e_code);
 }
-/*
+
 void getDeviceInfo() {
   String result = "{\"devices\": [";
   size_t i = 0;
@@ -37,4 +36,3 @@ void createTraffic() {
     tf_unknown_destroy(&unknown);
   }
 }
-*/

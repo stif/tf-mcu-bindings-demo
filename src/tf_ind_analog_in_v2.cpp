@@ -9,7 +9,6 @@ static void voltage_handler(TF_IndustrialDualAnalogInV2 *device, uint8_t channel
 	tf_hal_printf("Voltage: %d 1/%d V\n", voltage, 1000.0);
 	tf_hal_printf("\n");
 }
-
 static TF_IndustrialDualAnalogInV2 idai;
 
 void analog_in_setup(TF_HalContext *hal) {

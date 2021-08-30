@@ -7,15 +7,13 @@
 
 #include "hal_common.h"
 #include "bricklet_industrial_ptc.h"
+#include "tf_utils.h"
 
 #define UID_PTC "TMC" // Change XYZ to the UID of your PTC Bricklet 2.0
 
-extern void check(int rc, const char* msg);
-/*
 void ptc_setup(TF_HalContext *hal);
 void ptc_loop(TF_HalContext *hal);
-*/
 
-static void ptc_temperature_handler(TF_IndustrialPTC *device, int32_t temperature, void *user_data);
+//static void ptc_temperature_handler(TF_IndustrialPTC *device, int32_t temperature, void *user_data);
 
 #endif // __TF_IND_PTC_H__

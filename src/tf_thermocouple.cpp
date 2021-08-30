@@ -2,6 +2,7 @@
 
 // Callback function for temperature callback
 static void temperature_handler(TF_ThermocoupleV2 *device, int32_t temperature,
+//void temperature_handler(TF_ThermocoupleV2 *device, int32_t temperature,
                                 void *user_data) {
 	(void)device; (void)user_data; // avoid unused parameter warning
 
