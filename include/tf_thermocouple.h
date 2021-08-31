@@ -11,6 +11,8 @@
 
 #define UID_THERMOCOUPLE "RJH" // Change XYZ to the UID of your Thermocouple Bricklet 2.0
 
+extern float thermo_temp;
+
 void thermocouple_setup(TF_HalContext *hal);
 void thermocouple_loop(TF_HalContext *hal);
 

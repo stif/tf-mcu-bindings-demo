@@ -12,6 +12,12 @@
 
 TF_HalContext hal;
 
+unsigned long loopTimeDelay = 0;
+
+float thermo_temp = -1;
+float ptc_temp = -1;
+float analog_in_voltage = -1;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
@@ -35,4 +41,11 @@ void loop() {
 
   // Poll for callbacks
 	tf_hal_callback_tick(&hal, 0);
+
+  if((millis() - loopTimeDelay) > 1000) {  // Only process counters once per 10 second
+    loopTimeDelay = millis();
+    Serial.printf("Temperature Thermocoupler: %.2f\n", thermo_temp);
+    //Serial.printf("Temperature PTC: %f\n", ptc_temp);
+    //Serial.printf("Voltage: %f\n", analog_in_voltage);
+  }  
 }

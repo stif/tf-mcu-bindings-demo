@@ -4,7 +4,8 @@
 static void ptc_temperature_handler(TF_IndustrialPTC *device, int32_t temperature, void *user_data) {
 	(void)device; (void)user_data; // avoid unused parameter warning
 
-	tf_hal_printf("Temperature: %d 1/%d °C\n", temperature, 100.0);
+	//tf_hal_printf("Temperature: %d 1/%d °C\n", temperature, 100.0);
+	ptc_temp = temperature / 100;
 }
 
 

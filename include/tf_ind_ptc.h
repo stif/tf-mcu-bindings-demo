@@ -11,6 +11,8 @@
 
 #define UID_PTC "TMC" // Change XYZ to the UID of your PTC Bricklet 2.0
 
+extern float ptc_temp;
+
 void ptc_setup(TF_HalContext *hal);
 void ptc_loop(TF_HalContext *hal);
 

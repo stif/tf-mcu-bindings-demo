@@ -11,6 +11,8 @@
 
 #define UID_ANALOG_IN "Sfw" // Change XYZ to the UID of your Industrial Dual Analog In Bricklet 2.0
 
+extern float analog_in_voltage;
+
 void analog_in_setup(TF_HalContext *hal);
 void analog_in_loop(TF_HalContext *hal);
 
