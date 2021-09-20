@@ -8,26 +8,26 @@
 // you have to connect and list all chip select
 // signals, to make sure the signals are separated
 // correctly.
-TF_Port ports[5] = {{
-    .chip_select_pin=16,
+TF_Port ports[4] = {{
+    .chip_select_pin=32,
     .spi=HSPI,
     .port_name='A'
 }, {
-    .chip_select_pin=2,
+    .chip_select_pin=33,
     .spi=HSPI,
     .port_name='B'
-}, { 
-    .chip_select_pin=4,
+}, {
+    .chip_select_pin=13,
     .spi=HSPI,
     .port_name='C'
 }, {
-    .chip_select_pin=5,
+    .chip_select_pin=16,
     .spi=HSPI,
     .port_name='D'
-}, {
-    .chip_select_pin=15,
+}/*, { // only enable if Touchscreen is not used (CS Pin 5 via UEXT)
+    .chip_select_pin=5,
     .spi=HSPI,
     .port_name='E'
-}};
+}*/};
 
 #endif // __TF_PORTS_H__

@@ -37,16 +37,17 @@ git submodule update
 |HSPI	|GPIO 13	|GPIO 12	|GPIO 14	|GPIO 15|
 |Custom|GPIO 13	|GPIO *36*	|GPIO 14	|GPIO 15|
 
-|Mapping |Lolin32 |ESP32-PoE UEXT Connector|HAT Zero   |
-|--------|--------|---------|-----------|
-|MOSI    |GPIO 13 |GPIO 13  |PIN 19     |
-|MISO    |GPIO 12 |GPIO 36  |PIN 21     |
-|CLK     |GPIO 14 |GPIO 14  |PIN 23     |
-|CS HAT  |GPIO 15 |GPIO 15  |PIN 22     |
-|CS A    |GPIO 32 |GPIO 16  |PIN 13     |
-|CS B    |GPIO 33 |GPIO 2   |PIN 16     |
-|CS C    |GPIO 4  |GPIO 4   |PIN 18     |
-|CS D    |GPIO 5  |GPIO 5   |PIN 15     |
+|Mapping |Lolin32 |ESP32-PoE UEXT| ESP32-PoE HAT |HAT Zero   |
+|--------|--------|---------|---------|-----------|
+|MOSI    |GPIO 13 |GPIO 13  |GPIO  3  |PIN 19     |
+|MISO    |GPIO 12 |GPIO 36  |GPIO  35 |PIN 21     |
+|CLK     |GPIO 14 |GPIO 14  |GPIO  0  |PIN 23     |
+|CS A    |GPIO 32 |GPIO 16  |GPIO  32 |PIN 13     |
+|CS B    |GPIO 33 |GPIO 2   |GPIO  33 |PIN 16     |
+|CS C    |GPIO 4  |GPIO 4   |GPIO  13 |PIN 18     |
+|CS D    |GPIO 5  |GPIO 5   |GPIO  16 |PIN 15     |
+|CS HAT  |GPIO 15 |GPIO 15  |GPIO  5  |PIN 22     |
+
 
 ![OlimexESP32-Tinkerforge](OlimexESP32-UEXT-Tinkerforge.jpg)
 
