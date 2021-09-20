@@ -10,6 +10,7 @@
 #include "tf_ind_analog_in_v2.h"
 #include "tf_ind_analog_out_v2.h"
 #include "tf_ind_relais_dual.h"
+#include "tf_ind_relais_dual_ac.h"
 
 TF_HalContext hal;
 
@@ -31,13 +32,15 @@ void setup() {
   ptc_setup(&hal);
   analog_in_setup(&hal);
   //analog_out_setup(&hal); //bricklet not shipped until now..
-  relais_dual_setup(&hal);
+  //relais_dual_setup(&hal);
+  relais_dual_ac_setup(&hal);
 
   delay(1000);
   getDeviceInfo();
 }
 
 void loop() {
+  static bool state;
   // put your main code here, to run repeatedly:
   //createTraffic();
 
@@ -49,6 +52,8 @@ void loop() {
     Serial.printf("Temperature Thermocoupler: %.2f\n", thermo_temp);
     Serial.printf("Temperature PTC: %.2f\n", ptc_temp);
     Serial.printf("Voltage: %f\n", analog_in_voltage);
-    //relais_dual_switch(true, false); //cannel1, channel2
+    state = !state;
+    //relais_dual_switch(state, false); //cannel1, channel2
+    relais_dual_ac_switch(state, false); //cannel1, channel2
   }
 }

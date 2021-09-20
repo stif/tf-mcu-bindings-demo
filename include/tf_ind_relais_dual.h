@@ -11,8 +11,6 @@
 
 #define UID_RELAIS_DUAL "Tb9" // Change XYZ to the UID of your Industrial Dual Relay Bricklet
 
-void check(int rc, const char* msg);
-
 void relais_dual_switch(bool channel1, bool channel2);
 void relais_dual_setup(TF_HalContext *hal);
 void relais_dual_loop(TF_HalContext *hal);
