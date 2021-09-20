@@ -4,11 +4,12 @@
 #include "tf_ports.h"
 #include "tf_utils.h"
 
-#include "tf_thermocouple.h"
 #include "tf_hat_zero.h"
+#include "tf_thermocouple.h"
 #include "tf_ind_ptc.h"
 #include "tf_ind_analog_in_v2.h"
 #include "tf_ind_analog_out_v2.h"
+#include "tf_ind_relais_dual.h"
 
 TF_HalContext hal;
 
@@ -25,11 +26,12 @@ void setup() {
   check(tf_hal_create(&hal, ports, sizeof(ports)/sizeof(ports[0])), "hal create");
 
   //setup bricklets
-  hat_zero_setup(&hal);
+  //hat_zero_setup(&hal);
   thermocouple_setup(&hal);
   ptc_setup(&hal);
   analog_in_setup(&hal);
   //analog_out_setup(&hal); //bricklet not shipped until now..
+  relais_dual_setup(&hal);
 
   delay(1000);
   getDeviceInfo();
@@ -40,12 +42,13 @@ void loop() {
   //createTraffic();
 
   // Poll for callbacks
-	tf_hal_callback_tick(&hal, 0);
+	tf_hal_callback_tick(&hal, 100);
 
-  if((millis() - loopTimeDelay) > 1000) {  // Only process counters once per 10 second
+  if((millis() - loopTimeDelay) > 1000) {  // Only process counters once per 1 second
     loopTimeDelay = millis();
     Serial.printf("Temperature Thermocoupler: %.2f\n", thermo_temp);
-    //Serial.printf("Temperature PTC: %f\n", ptc_temp);
-    //Serial.printf("Voltage: %f\n", analog_in_voltage);
-  }  
+    Serial.printf("Temperature PTC: %.2f\n", ptc_temp);
+    Serial.printf("Voltage: %f\n", analog_in_voltage);
+    //relais_dual_switch(true, false); //cannel1, channel2
+  }
 }

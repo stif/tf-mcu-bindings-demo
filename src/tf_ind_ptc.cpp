@@ -5,7 +5,7 @@ static void ptc_temperature_handler(TF_IndustrialPTC *device, int32_t temperatur
 	(void)device; (void)user_data; // avoid unused parameter warning
 
 	//tf_hal_printf("Temperature: %d 1/%d °C\n", temperature, 100.0);
-	ptc_temp = temperature / 100;
+	ptc_temp = (float) temperature / 100;
 }
 
 
@@ -27,4 +27,9 @@ void ptc_setup(TF_HalContext *hal) {
 void ptc_loop(TF_HalContext *hal) {
 	// Poll for callbacks
 	tf_hal_callback_tick(hal, 0);
+	/*
+	// Get actual Temperature
+	industrial_ptc_get_temperature(&ptc, &temperature);
+	thermo_temp = (float) temperature / 100;
+	*/
 }
